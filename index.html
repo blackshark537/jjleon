@@ -30,7 +30,7 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
 
-     <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="JJ Leon's - Home Improvement Experts" />
     <meta property="twitter:description"
         content="We turn your ideas into quality and luxury-focused spaces. Our team combines years of experience in carpentry and remodeling to deliver results that exceed your expectations. Fully insured and licensed. HIC.0643575." />
@@ -131,7 +131,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
-    <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#EA2831", "background-light": "#f8f6f6", "background-dark": "#211111" }, fontFamily: { display: "Manrope" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" } } } };</script>
+    <script>tailwind.config = {
+            darkMode: "class", theme: {
+                extend: {
+                    colors: {
+                        primary: "#017D7D", // Pantone 7719 C - Teal 
+                        secondary: "#BA8A28", // Pantone 1255 C - Gold 
+                        accent: "#814509", // Pantone 731 C - Brown 
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#002726", // Pantone 627 C - Dark teal 
+                        dark: "#333333", // Pantone 447 C - Charcoal 
+                        gray: "#B3B3B3" // Pantone Cool Gray 5 C 
+                    }, fontFamily: { display: "Manrope" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" }
+                }
+            }
+        };</script>
 
     <style>
         .animate-on-scroll {
@@ -204,8 +218,9 @@
                                 <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
                                     href="#contact">Contact</a>
                             </div>
-                            <a href="#contact"
-                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
+                            <a href="https://wa.me/12039486732" target="_blank"
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#25D366] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#128C7E] transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all gap-2">
+                                <img src="imgs/whatsapp.png" alt="WhatsApp" class="w-5 h-5 brightness-0 invert">
                                 <span class="truncate">Get a Quote</span>
                             </a>
                         </nav>
@@ -224,9 +239,12 @@
                                         <h1
                                             class="text-white text-2xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] drop-shadow-md">
                                             JJ Leon's Home & Commercial Improvement and Remodeling in CT and NY.</h1>
-                                        <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal drop-shadow-sm">
-                                            We turn your ideas into quality and luxury-focused spaces. Our team combines years of experience in carpentry and remodeling to deliver results that exceed your expectations. Fully insured and licensed. # HIC.0643575
-                                            <br>Punctuality, Flexibility, Responsibility, Budget Friendly 
+                                        <h2
+                                            class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal drop-shadow-sm">
+                                            We turn your ideas into quality and luxury-focused spaces. Our team combines
+                                            years of experience in carpentry and remodeling to deliver results that
+                                            exceed your expectations. Fully insured and licensed. # HIC.0643575
+                                            <br>Punctuality, Flexibility, Responsibility, Budget Friendly
                                         </h2>
                                     </div>
                                     <a href="#contact"
@@ -272,7 +290,8 @@
                                     <div class="flex flex-col gap-1">
                                         <h3 class="text-base font-bold leading-tight">Home services</h3>
                                         <p class="text-sm font-normal leading-normal text-gray-600 dark:text-gray-400">
-                                            Tailored renovations and repairs to enhancethe comfort, style, and value of your home.</p>
+                                            Tailored renovations and repairs to enhancethe comfort, style, and value of
+                                            your home.</p>
                                     </div>
                                 </article>
 
@@ -284,7 +303,8 @@
                                     <div class="flex flex-col gap-1">
                                         <h3 class="text-base font-bold leading-tight">Commercial Services</h3>
                                         <p class="text-sm font-normal leading-normal text-gray-600 dark:text-gray-400">
-                                        Professional build-outs, maintenance, and repairs for offices, retail stores, assisting living and commercial properties.</p>
+                                            Professional build-outs, maintenance, and repairs for offices, retail
+                                            stores, assisting living and commercial properties.</p>
                                     </div>
                                 </article>
 
@@ -296,7 +316,8 @@
                                     <div class="flex flex-col gap-1">
                                         <h3 class="text-base font-bold leading-tight">Carpentry & Trimming</h3>
                                         <p class="text-sm font-normal leading-normal text-gray-600 dark:text-gray-400">
-                                            Expert custom interior and exterior carpentry work and high-quality trimming to add the perfect finish to your residential and commercial space.</p>
+                                            Expert custom interior and exterior carpentry work and high-quality trimming
+                                            to add the perfect finish to your residential and commercial space.</p>
                                     </div>
                                 </article>
 
@@ -354,8 +375,8 @@
                         <div class="grid grid-cols-1 md:grid-cols-4 auto-rows-[200px] gap-4">
                             <div
                                 class="animate-on-scroll md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/585ee5de-e543-4873-9f0e-489b14298d7d.jpg" alt="Modern Kitchen Renovation Danbury CT"
-                                    loading="lazy"
+                                <img src="imgs/585ee5de-e543-4873-9f0e-489b14298d7d.jpg"
+                                    alt="Modern Kitchen Renovation Danbury CT" loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -376,8 +397,8 @@
 
                             <div
                                 class="animate-on-scroll md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/1a779576-86ce-4fd6-9c65-40ab82e123c6.jpg" alt="Interior Painting and Trim Work"
-                                    loading="lazy"
+                                <img src="imgs/1a779576-86ce-4fd6-9c65-40ab82e123c6.jpg"
+                                    alt="Interior Painting and Trim Work" loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -387,7 +408,18 @@
 
                             <div
                                 class="animate-on-scroll md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/6cdf1a3b-a2b7-4160-b67c-ca632ad0268d.jpg" alt="Custom Kitchen Island Construction"
+                                <img src="imgs/6cdf1a3b-a2b7-4160-b67c-ca632ad0268d.jpg"
+                                    alt="Custom Kitchen Island Construction" loading="lazy"
+                                    class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                                    <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="animate-on-scroll delay-100 md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
+                                <img src="imgs/4a31af75-3697-4847-9f2e-7dfd473dc218.jpg" alt="Custom Carpentry Detail"
                                     loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
@@ -398,7 +430,8 @@
 
                             <div
                                 class="animate-on-scroll delay-100 md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/4a31af75-3697-4847-9f2e-7dfd473dc218.jpg" alt="Custom Carpentry Detail" loading="lazy"
+                                <img src="imgs/66f473af-ada9-4a81-8475-98e5c1197f9f.jpg" alt="Woodworking and Finishing"
+                                    loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -408,17 +441,8 @@
 
                             <div
                                 class="animate-on-scroll delay-100 md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/66f473af-ada9-4a81-8475-98e5c1197f9f.jpg" alt="Woodworking and Finishing" loading="lazy"
-                                    class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                                <div
-                                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
-                                    <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
-                                </div>
-                            </div>
-
-                            <div
-                                class="animate-on-scroll delay-100 md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/94a09918-522c-4fff-b609-cf3cdba5ed3e.jpg" alt="Home Renovation Progress" loading="lazy"
+                                <img src="imgs/94a09918-522c-4fff-b609-cf3cdba5ed3e.jpg" alt="Home Renovation Progress"
+                                    loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -428,7 +452,8 @@
 
                             <div
                                 class="animate-on-scroll delay-300 md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/570fc636-f416-4c9d-921f-6ebc1caf02e9.jpg" alt="Interior Design Update" loading="lazy"
+                                <img src="imgs/570fc636-f416-4c9d-921f-6ebc1caf02e9.jpg" alt="Interior Design Update"
+                                    loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -438,7 +463,8 @@
 
                             <div
                                 class="animate-on-scroll delay-300 md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/f96c85ce-1d7d-4df3-a837-d00abd224ffc.jpg" alt="Bathroom Remodel Finishing" loading="lazy"
+                                <img src="imgs/f96c85ce-1d7d-4df3-a837-d00abd224ffc.jpg"
+                                    alt="Bathroom Remodel Finishing" loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -448,7 +474,8 @@
 
                             <div
                                 class="animate-on-scroll md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/8f923797-dbeb-45b8-9975-23f8891c91b0.jpg" alt="Home Construction Service" loading="lazy"
+                                <img src="imgs/8f923797-dbeb-45b8-9975-23f8891c91b0.jpg" alt="Home Construction Service"
+                                    loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -458,7 +485,8 @@
 
                             <div
                                 class="animate-on-scroll md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/e8bd31a2-87c7-4df0-b9d1-a6605c403195.jpg" alt="Drywall and Taping" loading="lazy"
+                                <img src="imgs/e8bd31a2-87c7-4df0-b9d1-a6605c403195.jpg" alt="Drywall and Taping"
+                                    loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -468,7 +496,8 @@
 
                             <div
                                 class="animate-on-scroll delay-100 md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/94ffa2cf-427e-493b-8475-5d3d1da0e14e.jpg" alt="Home Renovation Progress" loading="lazy"
+                                <img src="imgs/94ffa2cf-427e-493b-8475-5d3d1da0e14e.jpg" alt="Home Renovation Progress"
+                                    loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -478,7 +507,8 @@
 
                             <div
                                 class="animate-on-scroll delay-100 md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/27c409f9-a71f-4ea2-99ab-270e400aeb03.jpg" alt="Home Renovation Progress" loading="lazy"
+                                <img src="imgs/27c409f9-a71f-4ea2-99ab-270e400aeb03.jpg" alt="Home Renovation Progress"
+                                    loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -488,17 +518,8 @@
 
                             <div
                                 class="animate-on-scroll delay-100 md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/50c974b7-b6c3-482b-becf-791f86c29a54.jpg" alt="Home Renovation Progress" loading="lazy"
-                                    class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                                <div
-                                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
-                                    <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
-                                </div>
-                            </div>
-                            
-                            <div
-                                class="animate-on-scroll delay-300 md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/7cf6f689-c8a0-4f72-b473-3ccd8830746e.jpg" alt="Interior Design Update" loading="lazy"
+                                <img src="imgs/50c974b7-b6c3-482b-becf-791f86c29a54.jpg" alt="Home Renovation Progress"
+                                    loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -508,7 +529,8 @@
 
                             <div
                                 class="animate-on-scroll delay-300 md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/79804d76-3218-40aa-93e0-af5c0dc106f6.jpg" alt="Bathroom Remodel Finishing" loading="lazy"
+                                <img src="imgs/7cf6f689-c8a0-4f72-b473-3ccd8830746e.jpg" alt="Interior Design Update"
+                                    loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -518,7 +540,8 @@
 
                             <div
                                 class="animate-on-scroll delay-300 md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/8492770f-9788-418f-b792-b1405d71eb24.jpg" alt="Interior Design Update" loading="lazy"
+                                <img src="imgs/79804d76-3218-40aa-93e0-af5c0dc106f6.jpg"
+                                    alt="Bathroom Remodel Finishing" loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -528,7 +551,8 @@
 
                             <div
                                 class="animate-on-scroll delay-300 md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/1c78bd39-7c86-4eeb-a1bf-1a8b5f4b7f21.jpg" alt="Bathroom Remodel Finishing" loading="lazy"
+                                <img src="imgs/8492770f-9788-418f-b792-b1405d71eb24.jpg" alt="Interior Design Update"
+                                    loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -538,7 +562,8 @@
 
                             <div
                                 class="animate-on-scroll delay-300 md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/3eff9688-6093-4cc6-9bc5-464a39dd6ea9.jpg" alt="Interior Design Update" loading="lazy"
+                                <img src="imgs/1c78bd39-7c86-4eeb-a1bf-1a8b5f4b7f21.jpg"
+                                    alt="Bathroom Remodel Finishing" loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -548,7 +573,19 @@
 
                             <div
                                 class="animate-on-scroll delay-300 md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
-                                <img src="imgs/e2019a0e-3816-4285-a3b9-b8b727e7709f.jpg" alt="Bathroom Remodel Finishing" loading="lazy"
+                                <img src="imgs/3eff9688-6093-4cc6-9bc5-464a39dd6ea9.jpg" alt="Interior Design Update"
+                                    loading="lazy"
+                                    class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                                    <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="animate-on-scroll delay-300 md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl shadow-md cursor-zoom-in">
+                                <img src="imgs/e2019a0e-3816-4285-a3b9-b8b727e7709f.jpg"
+                                    alt="Bathroom Remodel Finishing" loading="lazy"
                                     class="lightbox-trigger w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -646,54 +683,20 @@
                             <div
                                 class="animate-on-scroll delay-100 bg-white dark:bg-background-dark/50 p-8 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
 
-                                <form action="https://formsubmit.co/jjleonsllc981@gmail.com" method="POST"
-                                    class="space-y-6">
-                                    <input type="hidden" name="_captcha" value="false">
-                                    <input type="hidden" name="_subject" value="New Inquiry from JJ Leons Website!">
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                                            for="name">Full Name</label>
-                                        <div class="mt-1">
-                                            <input required autocomplete="name"
-                                                class="block w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-background-dark dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm h-10 transition-colors"
-                                                id="name" name="name" type="text" />
-                                        </div>
+                                <div
+                                    class="flex flex-col items-center justify-center h-full py-8 text-center space-y-6">
+                                    <div class="space-y-2">
+                                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Fast & Easy Quotes
+                                        </h3>
+                                        <p class="text-gray-600 dark:text-gray-400">Click below to message us on
+                                            WhatsApp for an instant estimate.</p>
                                     </div>
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                                            for="email">Email Address</label>
-                                        <div class="mt-1">
-                                            <input required autocomplete="email"
-                                                class="block w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-background-dark dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm h-10 transition-colors"
-                                                id="email" name="email" type="email" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                                            for="phone">Phone Number</label>
-                                        <div class="mt-1">
-                                            <input autocomplete="tel"
-                                                class="block w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-background-dark dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm h-10 transition-colors"
-                                                id="phone" name="phone" type="text" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                                            for="message">Message</label>
-                                        <div class="mt-1">
-                                            <textarea required
-                                                class="block w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-background-dark dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm transition-colors"
-                                                id="message" name="message" rows="4"></textarea>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <button
-                                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary h-12 items-center transition-all transform hover:scale-[1.02]"
-                                            type="submit">
-                                            Send Message
-                                        </button>
-                                    </div>
-                                </form>
+                                    <a href="https://wa.me/12039486732" target="_blank"
+                                        class="w-full sm:w-auto flex justify-center py-4 px-8 border border-transparent rounded-xl shadow-lg text-lg font-bold text-white bg-[#25D366] hover:bg-[#128C7E] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#25D366] items-center transition-all transform hover:scale-[1.02] gap-3">
+                                        <img src="imgs/whatsapp.png" alt="WhatsApp" class="w-8 h-8 brightness-0 invert">
+                                        Get a Quote
+                                    </a>
+                                </div>
                             </div>
                             <div class="animate-on-scroll delay-200 flex flex-col justify-between">
                                 <address class="space-y-6 not-italic">
