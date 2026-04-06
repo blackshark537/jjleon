@@ -207,9 +207,29 @@
         };</script>
 
     <style>
+        @keyframes bounceInRotate {
+            0% {
+                opacity: 0;
+                transform: scale(0.3) rotateZ(90deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1) rotateZ(-35deg);
+            }
+            70% {
+                transform: scale(0.95) rotateZ(-20deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotateZ(-25deg);
+            }
+        }
+
         .logo {
-            transform: rotateZ(-25deg) !important;
             margin-top: 20px;
+            transform: rotateZ(-25deg);
+            animation: bounceInRotate 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            transform-origin: center center;
         }
 
         .animate-on-scroll {
@@ -252,18 +272,18 @@
         <div class="layout-container flex h-full grow flex-col">
             <header
                 class="sticky top-0 z-40 w-full bg-primary text-white dark:bg-background-dark/90 backdrop-blur-sm border-b border-solid border-primary dark:border-gray-800 transition-all duration-300 shadow-md">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="px-4 sm:px-6">
                     <div class="flex items-center justify-between h-16">
                         <div class="flex items-center gap-4 text-white">
                             <img src="imgs/logo-mid.jpeg" alt="J & J Leon's Logo"
-                                class="logo h-32 w-32 object-cover rounded-full -rotate-1 shadow-lg border-2 border-white/20 bg-white p-1">
-                            <div class="text-lg font-bold leading-tight tracking-[-0.015em] title">J & J Leon's
+                                class="logo h-32 w-32 object-cover rounded-full shadow-lg border-2 border-white/20 bg-white p-1">
+                            <div class="hidden min-[800px]:block text-xl font-extrabold leading-tight tracking-[-0.015em] title">J & J Leon's
                                 Construction
                             </div>
                         </div>
                         <nav class="hidden md:flex flex-1 justify-end items-center gap-10" aria-label="Main Navigation">
                             <div class="flex items-center gap-10 text-white/90">
-                                <a class="text-base font-medium leading-normal hover:text-secondary dark:hover:text-secondary transition-colors"
+                                <a class="text-lg font-semibold leading-normal hover:text-secondary dark:hover:text-secondary transition-colors"
                                     href="#services">Services</a>
                                 <a class="text-base font-medium leading-normal hover:text-secondary dark:hover:text-secondary transition-colors"
                                     href="#gallery">Gallery</a>
@@ -278,79 +298,149 @@
                                 <span class="truncate">Get a Quote</span>
                             </a>
                         </nav>
+                        
+                        <!-- Mobile Menu Button -->
+                        <button id="mobileMenuBtn" class="md:hidden text-white hover:text-secondary p-2 transition-colors focus:outline-none" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="material-symbols-outlined" style="font-size:32px;">menu</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Navigation Menu Dropdown -->
+                <div id="mobileMenu" class="hidden md:hidden bg-primary dark:bg-background-dark border-t border-white/10 shadow-xl absolute top-full left-0 w-full z-30">
+                    <div class="px-6 py-4 flex flex-col gap-4 text-white">
+                        <a class="text-lg font-medium py-2 hover:text-secondary transition-colors border-b border-white/10" href="#services">Services</a>
+                        <a class="text-lg font-medium py-2 hover:text-secondary transition-colors border-b border-white/10" href="#gallery">Gallery</a>
+                        <a class="text-lg font-medium py-2 hover:text-secondary transition-colors border-b border-white/10" href="#about">About</a>
+                        <a class="text-lg font-medium py-2 hover:text-secondary transition-colors border-b border-white/10" href="#contact">Contact</a>
+                        <a href="https://wa.me/12039486732" target="_blank" class="flex mt-2 w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 bg-secondary text-white font-bold hover:bg-secondary/90 transition-colors gap-2 shadow-lg">
+                            <img src="imgs/whatsapp.png" alt="WhatsApp" class="w-6 h-6 brightness-0 invert">
+                            <span>Get a Quote</span>
+                        </a>
                     </div>
                 </div>
             </header>
             <main class="flex-1">
-                <section class="w-full py-5">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div class="@container">
-                            <div class="@[480px]:p-4">
-                                <!-- Hero Carousel -->
-                                <div id="heroCarousel"
-                                    class="animate-on-scroll relative min-h-[480px] md:min-h-[560px] @[480px]:rounded-xl overflow-hidden shadow-2xl"
-                                    aria-label="J &amp; J Leon's project photo slideshow">
+                <section class="w-full h-[calc(100vh-64px)] min-h-[600px]">
+                    <!-- Hero Carousel -->
+                    <div id="heroCarousel" class="animate-on-scroll relative w-full h-full overflow-hidden"
+                        aria-label="J &amp; J Leon's project photo slideshow">
 
-                                    <!-- Slides -->
-                                    <div class="absolute inset-0" id="heroSlides">
-                                        <img src="imgs/1000451807.jpg" alt="Completed renovation project by J &amp; J Leon's" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000" data-index="0">
-                                        <img src="imgs/1000451808.jpg" alt="Kitchen renovation Danbury CT" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="1">
-                                        <img src="imgs/1000451809.jpg" alt="Interior painting and trim work" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="2">
-                                        <img src="imgs/1000451810.jpg" alt="Custom kitchen island construction" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="3">
-                                        <img src="imgs/1000451811.jpg" alt="Carpentry detail work" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="4">
-                                        <img src="imgs/1000451812.jpg" alt="Woodworking and finishing" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="5">
-                                        <img src="imgs/1000451813.jpg" alt="Home renovation progress" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="6">
-                                        <img src="imgs/1000451814.jpg" alt="Interior design update CT" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="7">
-                                        <img src="imgs/1000451815.jpg" alt="Bathroom remodel finishing" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="8">
-                                        <img src="imgs/1000451816.jpg" alt="Home construction service" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="9">
-                                        <img src="imgs/1000451817.jpg" alt="Drywall and taping" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="10">
-                                        <img src="imgs/1000451818.jpg" alt="Full home remodeling Danbury" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="11">
-                                        <img src="imgs/1000451819.jpg" alt="Renovation in progress CT" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="12">
-                                        <img src="imgs/1000451820.jpg" alt="Professional carpentry CT" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="13">
-                                        <img src="imgs/1000451821.jpg" alt="Remodeling craftsmanship" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="14">
-                                        <img src="imgs/1000451822.jpg" alt="Bathroom renovation CT" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="15">
-                                        <img src="imgs/1000451823.jpg" alt="Interior remodel result" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="16">
-                                        <img src="imgs/1000451824.jpg" alt="Quality home improvement CT" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="17">
-                                        <img src="imgs/1000451825.jpg" alt="Home upgrade Danbury NY" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="18">
-                                        <img src="imgs/1000451907.jpg" alt="J &amp; J Leon's completed project" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" data-index="19">
-                                    </div>
-
-                                    <!-- Gradient overlay -->
-                                    <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/60 pointer-events-none"></div>
-
-                                    <!-- Prev / Next arrows -->
-                                    <button id="heroPrev" aria-label="Previous slide"
-                                        class="absolute left-3 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white bg-black/20 hover:bg-black/40 rounded-full p-2 transition-all">
-                                        <span class="material-symbols-outlined" style="font-size:32px;" aria-hidden="true">chevron_left</span>
-                                    </button>
-                                    <button id="heroNext" aria-label="Next slide"
-                                        class="absolute right-3 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white bg-black/20 hover:bg-black/40 rounded-full p-2 transition-all">
-                                        <span class="material-symbols-outlined" style="font-size:32px;" aria-hidden="true">chevron_right</span>
-                                    </button>
-
-                                    <!-- Overlay content -->
-                                    <div class="relative z-10 flex flex-col gap-6 @[480px]:gap-8 items-start justify-end h-full min-h-[480px] md:min-h-[560px] px-4 pb-10 @[480px]:px-10">
-                                        <div class="flex flex-col gap-2 text-left max-w-2xl">
-                                            <h1 class="text-white text-2xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] drop-shadow-md">
-                                                J &amp; J Leon's Construction and Remodeling in CT and NY.</h1>
-                                            <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal drop-shadow-sm">
-                                                We turn your ideas into quality and luxury-focused spaces. Our team combines
-                                                years of experience in carpentry and remodeling to deliver results that
-                                                exceed your expectations. Fully insured and licensed. HIC.0643575
-                                                <br>Punctuality, Flexibility, Responsibility, Budget Friendly
-                                            </h2>
-                                        </div>
-                                        <a href="#contact"
-                                            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 @[480px]:h-14 @[480px]:px-10 bg-secondary text-white text-base font-bold leading-normal tracking-[0.015em] @[480px]:text-lg @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-secondary/90 transition-colors shadow-lg hover:scale-105 transform duration-200">
-                                            <span class="truncate">Request a Free Estimate</span>
-                                        </a>
-                                    </div>
-
-                                    <!-- Dot indicators -->
-                                    <div id="heroDots" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2" role="tablist" aria-label="Slide indicators"></div>
-                                </div>
-                            </div>
+                        <!-- Slides -->
+                        <div class="absolute inset-0" id="heroSlides">
+                            <img src="imgs/1000451807.jpg" alt="Completed renovation project by J &amp; J Leon's"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+                                data-index="0">
+                            <img src="imgs/1000451808.jpg" alt="Kitchen renovation Danbury CT"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="1">
+                            <img src="imgs/1000451809.jpg" alt="Interior painting and trim work"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="2">
+                            <img src="imgs/1000451810.jpg" alt="Custom kitchen island construction"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="3">
+                            <img src="imgs/1000451811.jpg" alt="Carpentry detail work"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="4">
+                            <img src="imgs/1000451812.jpg" alt="Woodworking and finishing"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="5">
+                            <img src="imgs/1000451813.jpg" alt="Home renovation progress"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="6">
+                            <img src="imgs/1000451814.jpg" alt="Interior design update CT"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="7">
+                            <img src="imgs/1000451815.jpg" alt="Bathroom remodel finishing"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="8">
+                            <img src="imgs/1000451816.jpg" alt="Home construction service"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="9">
+                            <img src="imgs/1000451817.jpg" alt="Drywall and taping"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="10">
+                            <img src="imgs/1000451818.jpg" alt="Full home remodeling Danbury"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="11">
+                            <img src="imgs/1000451819.jpg" alt="Renovation in progress CT"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="12">
+                            <img src="imgs/1000451820.jpg" alt="Professional carpentry CT"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="13">
+                            <img src="imgs/1000451821.jpg" alt="Remodeling craftsmanship"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="14">
+                            <img src="imgs/1000451822.jpg" alt="Bathroom renovation CT"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="15">
+                            <img src="imgs/1000451823.jpg" alt="Interior remodel result"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="16">
+                            <img src="imgs/1000451824.jpg" alt="Quality home improvement CT"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="17">
+                            <img src="imgs/1000451825.jpg" alt="Home upgrade Danbury NY"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="18">
+                            <img src="imgs/1000451907.jpg" alt="J &amp; J Leon's completed project"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                                data-index="19">
                         </div>
+
+                        <!-- Before / After labels -->
+                        <span
+                            class="absolute top-11 left-6 z-20 bg-white text-gray-800 text-sm sm:text-lg font-extrabold uppercase tracking-widest px-5 sm:px-6 py-2 sm:py-2.5 shadow-lg pointer-events-none"
+                            style="transform:skewX(-12deg); top: 5em;">
+                            <span style="display:inline-block;transform:skewX(12deg);">Before</span>
+                        </span>
+                        <span
+                            class="absolute top-11 right-6 z-20 bg-white text-gray-800 text-sm sm:text-lg font-extrabold uppercase tracking-widest px-5 sm:px-6 py-2 sm:py-2.5 shadow-lg pointer-events-none"
+                            style="transform:skewX(-12deg); top: 5em;">
+                            <span style="display:inline-block;transform:skewX(12deg);">After</span>
+                        </span>
+
+                        <!-- Gradient overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/60 pointer-events-none">
+                        </div>
+
+                        <!-- Prev / Next arrows -->
+                        <button id="heroPrev" aria-label="Previous slide"
+                            class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white bg-black/20 hover:bg-black/40 rounded-full p-2 md:p-3 transition-all">
+                            <span class="material-symbols-outlined" style="font-size:32px;"
+                                aria-hidden="true">chevron_left</span>
+                        </button>
+                        <button id="heroNext" aria-label="Next slide"
+                            class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white bg-black/20 hover:bg-black/40 rounded-full p-2 md:p-3 transition-all">
+                            <span class="material-symbols-outlined" style="font-size:32px;"
+                                aria-hidden="true">chevron_right</span>
+                        </button>
+
+                        <!-- Overlay content -->
+                        <div
+                            class="relative z-10 w-full flex flex-col gap-6 sm:gap-8 items-start justify-end h-full px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
+                            <div class="flex flex-col gap-2 text-left max-w-2xl">
+                                <h1
+                                    class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em] drop-shadow-md">
+                                    J &amp; J Leon's Construction and Remodeling in CT and NY.</h1>
+                                <h2 class="text-white text-base sm:text-lg font-normal leading-normal drop-shadow-sm">
+                                    We turn your ideas into quality and luxury-focused spaces. Our team combines
+                                    years of experience in carpentry and remodeling to deliver results that
+                                    exceed your expectations. Fully insured and licensed. HIC.0643575
+                                    <br>Punctuality, Flexibility, Responsibility, Budget Friendly
+                                </h2>
+                            </div>
+                            <a href="#contact"
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 sm:h-14 px-8 sm:px-10 bg-secondary text-white text-base sm:text-lg font-bold leading-normal tracking-[0.015em] hover:bg-secondary/90 transition-colors shadow-lg hover:scale-105 transform duration-200">
+                                <span class="truncate">Request a Free Estimate</span>
+                            </a>
+                        </div>
+
+                        <!-- Dot indicators -->
+                        <div id="heroDots" class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2"
+                            role="tablist" aria-label="Slide indicators"></div>
                     </div>
                 </section>
 
@@ -369,7 +459,8 @@
                                 <article
                                     class="animate-on-scroll delay-100 flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark/50 p-6 flex-col hover:shadow-lg transition-shadow duration-300">
                                     <div class="text-primary transform transition-transform group-hover:scale-110">
-                                        <img src="imgs/e7ff87c0-e7a0-4687-ad3d-08723705e120.jpg" alt="General Home Improvement Service">
+                                        <img src="imgs/e7ff87c0-e7a0-4687-ad3d-08723705e120.jpg"
+                                            alt="General Home Improvement Service">
                                     </div>
                                     <div class="flex flex-col gap-1">
                                         <h3 class="text-base font-bold leading-tight">General Home Improvement</h3>
@@ -382,7 +473,8 @@
                                 <article
                                     class="animate-on-scroll flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark/50 p-6 flex-col hover:shadow-lg transition-shadow duration-300">
                                     <div class="text-primary">
-                                        <img src="imgs/f58b0628-8542-471e-ace4-db7e8faf61e2.jpg" alt="Home Services and Renovation">
+                                        <img src="imgs/f58b0628-8542-471e-ace4-db7e8faf61e2.jpg"
+                                            alt="Home Services and Renovation">
                                     </div>
                                     <div class="flex flex-col gap-1">
                                         <h3 class="text-base font-bold leading-tight">Home services</h3>
@@ -395,7 +487,8 @@
                                 <article
                                     class="animate-on-scroll flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark/50 p-6 flex-col hover:shadow-lg transition-shadow duration-300">
                                     <div class="text-primary">
-                                        <img src="imgs/2c455a20-cf29-4a19-9b4d-8cc9f2d29898.jpg" alt="Commercial Services Contractor CT">
+                                        <img src="imgs/2c455a20-cf29-4a19-9b4d-8cc9f2d29898.jpg"
+                                            alt="Commercial Services Contractor CT">
                                     </div>
                                     <div class="flex flex-col gap-1">
                                         <h3 class="text-base font-bold leading-tight">Commercial Services</h3>
@@ -408,7 +501,8 @@
                                 <article
                                     class="animate-on-scroll delay-200 flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark/50 p-6 flex-col hover:shadow-lg transition-shadow duration-300">
                                     <div class="text-primary">
-                                        <img src="imgs/34879a99-a686-473a-ad45-e75ccb23fb30.jpg" alt="Carpentry and Trimming">
+                                        <img src="imgs/34879a99-a686-473a-ad45-e75ccb23fb30.jpg"
+                                            alt="Carpentry and Trimming">
                                     </div>
                                     <div class="flex flex-col gap-1">
                                         <h3 class="text-base font-bold leading-tight">Carpentry & Trimming</h3>
@@ -421,7 +515,8 @@
                                 <article
                                     class="animate-on-scroll flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark/50 p-6 flex-col hover:shadow-lg transition-shadow duration-300">
                                     <div class="text-primary">
-                                        <img src="imgs/528ca8ac-5bf3-4a43-a665-bb2495346d8d.jpg" alt="Interior and Exterior Painting CT">
+                                        <img src="imgs/528ca8ac-5bf3-4a43-a665-bb2495346d8d.jpg"
+                                            alt="Interior and Exterior Painting CT">
                                     </div>
                                     <div class="flex flex-col gap-1">
                                         <h3 class="text-base font-bold leading-tight">Interior & Exterior painting</h3>
@@ -433,7 +528,8 @@
                                 <article
                                     class="animate-on-scroll delay-300 flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark/50 p-6 flex-col hover:shadow-lg transition-shadow duration-300">
                                     <div class="text-primary">
-                                        <img src="imgs/0105b189-0daa-4ae3-8558-c03ccde1ed1d.jpg" alt="Full Home Remodeling Danbury CT">
+                                        <img src="imgs/0105b189-0daa-4ae3-8558-c03ccde1ed1d.jpg"
+                                            alt="Full Home Remodeling Danbury CT">
                                     </div>
                                     <div class="flex flex-col gap-1">
                                         <h3 class="text-base font-bold leading-tight">Full Home Remodeling</h3>
@@ -446,7 +542,8 @@
                                 <article
                                     class="animate-on-scroll flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark/50 p-6 flex-col hover:shadow-lg transition-shadow duration-300">
                                     <div class="text-primary">
-                                        <img src="imgs/08fc80f4-f3a5-4358-ad03-664d26732946.jpg" alt="Safe Demolition Service CT">
+                                        <img src="imgs/08fc80f4-f3a5-4358-ad03-664d26732946.jpg"
+                                            alt="Safe Demolition Service CT">
                                     </div>
                                     <div class="flex flex-col gap-1">
                                         <h3 class="text-base font-bold leading-tight">Demolition</h3>
@@ -708,41 +805,68 @@
                             <div class="h-1 w-20 bg-primary mt-4 rounded-full"></div>
                         </div>
 
-                        <div
-                            class="animate-on-scroll delay-100 relative bg-white dark:bg-background-dark/50 p-8 md:p-12 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800">
-                            <div class="absolute -top-6 left-8 bg-primary text-white p-3 rounded-full shadow-lg">
-                                <span class="material-symbols-outlined" style="font-size: 32px;"
-                                    aria-hidden="true">format_quote</span>
-                            </div>
-
-                            <div class="space-y-6 pt-4">
-                                <blockquote
-                                    class="text-lg md:text-xl font-medium leading-relaxed italic text-gray-700 dark:text-gray-300">
-                                    "I have had the pleasure to work on many projects with J&J Leons, from small
-                                    apartment painting to full renovations of Assisted Living Buildings... I have always
-                                    found the professionalism that he showed me, my team, and Residents, as well as his
-                                    staff of professional workers."
-                                </blockquote>
-                                <p class="text-base md:text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                                    "Jorge, not only had very competitive pricing, but utilized the highest quality
-                                    materials, started projects on time, and finished well within the timeframe agreed
-                                    upon. I always could count on him to provide services beyond Painting, he provided
-                                    ceramic tiling, welding, carpentry. The quality was well beyond other vendors that
-                                    were utilized in the past, and pricing always kept us within budget."
-                                </p>
-
-                                <div class="flex items-center gap-4 pt-4 border-t border-gray-100 dark:border-gray-700">
-                                    <div
-                                        class="bg-gray-200 dark:bg-gray-700 h-12 w-12 rounded-full flex items-center justify-center text-xl font-bold text-gray-500">
-                                        M
+                        <!-- Testimonials Carousel Container -->
+                        <div class="relative w-full overflow-hidden animate-on-scroll" id="testimonialCarousel">
+                            <div class="flex transition-transform duration-700 ease-in-out" id="testimonialTrack">
+                                <!-- Testimonial 1 -->
+                                <div class="w-full flex-shrink-0 px-2 sm:px-4 pb-12">
+                                    <div class="relative bg-white dark:bg-background-dark/50 p-8 md:p-12 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 h-full mt-6">
+                                        <div class="absolute -top-6 left-8 bg-primary text-white p-3 rounded-full shadow-lg">
+                                            <span class="material-symbols-outlined" style="font-size: 32px;" aria-hidden="true">format_quote</span>
+                                        </div>
+                                        <div class="space-y-6 pt-4 h-full flex flex-col justify-between">
+                                            <div>
+                                                <blockquote class="text-lg md:text-xl font-medium leading-relaxed italic text-gray-700 dark:text-gray-300">
+                                                    "I have had the pleasure to work on many projects with J&J Leons, from small apartment painting to full renovations of Assisted Living Buildings... I have always found the professionalism that he showed me, my team, and Residents, as well as his staff of professional workers."
+                                                </blockquote>
+                                                <p class="text-base md:text-lg leading-relaxed text-gray-600 dark:text-gray-400 mt-4">
+                                                    "Jorge, not only had very competitive pricing, but utilized the highest quality materials, started projects on time, and finished well within the timeframe agreed upon. I always could count on him to provide services beyond Painting, he provided ceramic tiling, welding, carpentry. The quality was well beyond other vendors that were utilized in the past, and pricing always kept us within budget."
+                                                </p>
+                                            </div>
+                                            <div class="flex items-center gap-4 pt-6 border-t border-gray-100 dark:border-gray-700 mt-4">
+                                                <div class="bg-gray-200 dark:bg-gray-700 h-12 w-12 rounded-full flex items-center justify-center text-xl font-bold text-gray-500">
+                                                    M
+                                                </div>
+                                                <div class="text-left">
+                                                    <h4 class="font-bold text-lg text-[#111518] dark:text-white">Mark Weinberger</h4>
+                                                    <p class="text-sm text-primary font-medium">Verified Reference</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="text-left">
-                                        <h4 class="font-bold text-lg text-[#111518] dark:text-white">Mark Weinberger
-                                        </h4>
-                                        <p class="text-sm text-primary font-medium">Verified Reference</p>
+                                </div>
+
+                                <!-- Testimonial 2 -->
+                                <div class="w-full flex-shrink-0 px-2 sm:px-4 pb-12">
+                                    <div class="relative bg-white dark:bg-background-dark/50 p-8 md:p-12 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 h-full mt-6">
+                                        <div class="absolute -top-6 left-8 bg-primary text-white p-3 rounded-full shadow-lg">
+                                            <span class="material-symbols-outlined" style="font-size: 32px;" aria-hidden="true">format_quote</span>
+                                        </div>
+                                        <div class="space-y-6 pt-4 h-full flex flex-col justify-between">
+                                            <div>
+                                                <blockquote class="text-lg md:text-xl font-medium leading-relaxed italic text-gray-700 dark:text-gray-300">
+                                                    "Jorge and his crew have worked throughout our home over the years—there truly wasn’t a room they didn’t touch. From painting and kitchen renovation work to exterior siding, window replacement, a large pool deck, and the addition of a secondary bathroom, his craftsmanship and hands-on approach were consistent."
+                                                </blockquote>
+                                                <p class="text-base md:text-lg leading-relaxed text-gray-600 dark:text-gray-400 mt-4">
+                                                    "Beyond his skill, Jorge is a genuinely positive presence: respectful, thoughtful, and easy to work with. He communicates clearly, takes pride in his work, and brings a steady, good-natured professionalism to every project."
+                                                </p>
+                                            </div>
+                                            <div class="flex items-center gap-4 pt-6 border-t border-gray-100 dark:border-gray-700 mt-4">
+                                                <div class="bg-gray-200 dark:bg-gray-700 h-12 w-12 rounded-full flex items-center justify-center text-xl font-bold text-gray-500">
+                                                    A
+                                                </div>
+                                                <div class="text-left">
+                                                    <h4 class="font-bold text-lg text-[#111518] dark:text-white">Antoinette Fornshell</h4>
+                                                    <p class="text-sm text-primary font-medium">Verified Reference</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!-- Dot indicators -->
+                            <div id="testimonialDots" class="absolute bottom-1 left-1/2 -translate-x-1/2 z-20 flex gap-3" role="tablist" aria-label="Testimonial indicators"></div>
                         </div>
                     </div>
                 </section>
@@ -863,6 +987,11 @@
             </footer>
         </div>
     </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 z-50 bg-secondary text-white p-3 rounded-full shadow-xl opacity-0 translate-y-10 pointer-events-none transition-all duration-300 hover:bg-secondary/90 hover:scale-110 focus:outline-none flex items-center justify-center" aria-label="Back to top">
+        <span class="material-symbols-outlined text-3xl" aria-hidden="true">arrow_upward</span>
+    </button>
 
     <div id="imageModal"
         class="fixed inset-0 z-[60] flex items-center justify-center bg-black/95 opacity-0 pointer-events-none p-4 md:p-10"
@@ -1030,7 +1159,7 @@
                 function next() { goTo(current + 1); }
                 function prev() { goTo(current - 1); }
 
-                function startTimer() { timer = setInterval(next, 4000); }
+                function startTimer() { timer = setInterval(next, 5000); }
                 function resetTimer() { clearInterval(timer); startTimer(); }
 
                 prevBtn.addEventListener('click', function () { prev(); resetTimer(); });
@@ -1039,6 +1168,95 @@
                 carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
                 carousel.addEventListener('mouseleave', startTimer);
 
+                startTimer();
+            })();
+
+            // --- 4. Mobile Navigation Menu Toggle ---
+            (function () {
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const mobileMenu = document.getElementById('mobileMenu');
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+                if (mobileMenuBtn && mobileMenu) {
+                    mobileMenuBtn.addEventListener('click', function () {
+                        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+                        mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+                        mobileMenu.classList.toggle('hidden');
+
+                        const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+                        if (icon) {
+                            icon.textContent = isExpanded ? 'menu' : 'close';
+                        }
+                    });
+
+                    // Close menu when clicking a link
+                    mobileMenuLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                            const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+                            if (icon) icon.textContent = 'menu';
+                        });
+                    });
+                }
+            })();
+
+            // --- 5. Back to Top Button ---
+            (function () {
+                const backToTop = document.getElementById('backToTop');
+                if (backToTop) {
+                    window.addEventListener('scroll', () => {
+                        if (window.scrollY > 300) {
+                            backToTop.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                            backToTop.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                        } else {
+                            backToTop.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                            backToTop.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                        }
+                    });
+
+                    backToTop.addEventListener('click', () => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+            })();
+
+            // --- 6. Testimonial Carousel Toggle ---
+            (function () {
+                const track = document.getElementById('testimonialTrack');
+                if (!track) return;
+                
+                const slides = Array.from(track.children);
+                const dotsContainer = document.getElementById('testimonialDots');
+                let current = 0;
+                let timer;
+
+                // Build dots
+                slides.forEach(function (_, i) {
+                    const dot = document.createElement('button');
+                    dot.setAttribute('role', 'tab');
+                    dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+                    dot.className = 'w-3 h-3 rounded-full transition-all duration-300 ' + (i === 0 ? 'bg-primary w-6' : 'bg-gray-300 dark:bg-gray-600');
+                    dot.addEventListener('click', function () { goTo(i); resetTimer(); });
+                    dotsContainer.appendChild(dot);
+                });
+
+                function goTo(index) {
+                    dotsContainer.children[current].className = 'w-3 h-3 rounded-full transition-all duration-300 bg-gray-300 dark:bg-gray-600';
+                    current = Math.max(0, Math.min(index, slides.length - 1));
+                    dotsContainer.children[current].className = 'w-3 h-3 rounded-full transition-all duration-300 bg-primary w-6';
+                    track.style.transform = `translateX(-${current * 100}%)`;
+                }
+
+                function next() { goTo((current + 1) % slides.length); }
+
+                function startTimer() { timer = setInterval(next, 7000); }
+                function resetTimer() { clearInterval(timer); startTimer(); }
+
+                const carousel = document.getElementById('testimonialCarousel');
+                carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
+                carousel.addEventListener('mouseleave', startTimer);
+                
                 startTimer();
             })();
 
